@@ -23,7 +23,7 @@ public class ChatClient extends Application {
 	private OutputStream outStream; // for low level output
 	private DataOutputStream outDataStream; // for high level output
 	
-	private ListenerTask listener; // required for the cleint thread
+	private ListenerTask listener; // required for the client thread
 	
 	private int port; // to hold the port number of the server
 	

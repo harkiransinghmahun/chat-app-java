@@ -31,6 +31,8 @@ public class ChatServer extends Application {
 	private OutputStream outStream; // for low level output
 	private DataOutputStream outDataStream; // for high level output private ListenerTask listener; // required for the server thread
 	
+	private ListenerTask listener;
+	
 	private final int port = 8901;
 	private String name;
 	
@@ -75,8 +77,8 @@ public class ChatServer extends Application {
 		
 		
 	private void startServerThread() {
-		Socket connection; // declare a "general" socket ServerSocket 
-		listenSocket; // declare a server socket
+		Socket connection; // declare a "general" socket 
+		ServerSocket listenSocket; // declare a server socket
 		
 		try {
 			

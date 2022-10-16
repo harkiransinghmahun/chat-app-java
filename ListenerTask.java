@@ -18,26 +18,25 @@ public class ListenerTask extends Task {
 		window = windowIn; connection = connectionIn;
 		
 		try {
-		dataInputStream = new DataInputStream(inputStream); 
-		}
-		catch(IOException e) {
+			inputStream = connection.getInputStream();
+			dataInputStream = new DataInputStream(inputStream); 
+		} catch(IOException e) {
 		}
 	}
 	
 	@Override
 	protected Void call() {
-	String msg;
-	
-	while(true) {
-		try {
-			msg = dataInputStream.readUTF(); // read the incoming message window.appendText(msg); // display the message
-		}
-		catch(IOException e) {
-		}
+		String msg;
 		
-		// create an input stream from the remote machine
-		inputStream = connection.getInputStream();
-	} 
+		while(true) {
+			try {
+				msg = dataInputStream.readUTF(); // read the incoming message window.appendText(msg); // display the message
+			}
+			catch(IOException e) {
+			}
+			
+			// create an input stream from the remote machine
+		} 
 	}
 	
 }
